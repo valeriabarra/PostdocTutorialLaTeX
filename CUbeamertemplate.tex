@@ -1,0 +1,56 @@
+\documentclass[aspectratio=1610,xcolor={dvipsnames}]{beamer}
+\beamertemplatenavigationsymbolsempty
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usefonttheme[onlymath]{serif}
+
+\usetheme{Boadilla}
+
+% A CU color scheme complete with logo
+\definecolor{CUgold}{cmyk}{0,0.1,0.48,0.22}
+\definecolor{CUdarkgray}{cmyk}{0.38, 0.28,0.21, 0.63}
+\definecolor{CUlightgray}{cmyk}{0.16, 0.11, 0.11, 0.29}
+\setbeamercolor*{structure}{bg=CUgold,fg=black}
+\setbeamercolor*{palette primary}{use=structure,fg=black,bg=CUlightgray}
+\setbeamercolor*{palette secondary}{use=structure,fg=black,bg=structure.bg}
+\setbeamercolor*{palette tertiary}{use=structure,fg=white,bg=structure.fg}
+\logo{\includegraphics[width=1.5in,trim={0in 0in 0in 0in},clip]{Boulder-one-line}}
+
+% This command allows you to make a slide without the logo
+% Ex: {\nologo \begin{frame}... \end{frame} }
+\newcommand{\nologo}{\setbeamertemplate{logo}{}}
+
+% These commands allow for backup slides without affecting numbering
+\newcommand{\backupbegin}{
+	\newcounter{framenumberappendix}
+	\setcounter{framenumberappendix}{\value{framenumber}}
+}
+\newcommand{\backupend}{
+	\addtocounter{framenumberappendix}{-\value{framenumber}}
+	\addtocounter{framenumber}{\value{framenumberappendix}} 
+}
+
+\title[Short title]{Full title}
+\author[Short author name]{Full Author Name, III}
+\institute[Short institute]{Full institute \\
+University of Colorado Boulder}
+\date[Short date]{Long date \\ Name of conference \\ Month dd, yyyy}
+
+\begin{document}
+	
+{\nologo \frame{\titlepage}}
+
+\begin{frame}
+\frametitle{Example slide (a.k.a. frame)}
+\end{frame}
+
+\backupbegin
+
+\begin{frame}
+\frametitle{Example backup slide}
+\end{frame}
+
+\backupend
+
+\end{document}
