@@ -47,11 +47,13 @@
 % Note: In two-sided printing, \cleardoublepage also makes the next page of content a right-hand page, an odd-numbered page, if necessary inserting a blank page
 
 %% Introduction
-\section[Intro]{Introduction}
+%\section[Introduction]{Introduction}
 % compare to:
-%\section*[Intro]{Introduction} % this prevents this section from being listed and enumerated in the table of contents
+\section*{Introduction} % this prevents this section from being listed and enumerated in the table of contents
 
 This is an introduction to \LaTeX!
+
+% Notice that every time we leave a blank line, we tell LaTeX to go on a new line and start a new paragraph. The new paragraph will be automatically indented.
 
 But what is \LaTeX? And what is \TeX?
 
@@ -74,18 +76,19 @@ One of my favorite references from undergrad is \cite{NotSoShortIntro}.
 
 This is the first section of our document.
 
-\subsection[Subsec. short title]{Subsection long title}\label{MySection}
-
 I think we need a subsection.
 
 \subsubsection[Subsubsec. short title]{Subsubsection long title}\label{MySubsubsection}
 
 I think we need a subsubsection.
 
+
 %% Section 3
 \section[Section short title]{Section long title}
 
 Now let's start another section. Let's reference something that I said in section \ref{MySection} and elaborated in section \ref{MySubsubsection}.
+
+\subsection[Subsec. short title]{Subsection long title}\label{MySection}
 
 % an empty line creates a newline
 Let's start a new line. % this gets automatically indented
@@ -108,7 +111,7 @@ third line \bigskip or
 
 a fixed vertical spacing \vspace{1cm}
 
-of $1$~cm. % Note: our first math-mode so far. We include inline math-mode in single $ symbols. The number displayed in math-mode is aesthetically better than in non-math-mode
+of 1 cm. % Note: our first math-mode so far. We include inline math-mode in single $ symbols. The number displayed in math-mode is aesthetically better than in non-math-mode
 
 \vspace{0.5cm}
 
@@ -118,9 +121,11 @@ There are several units in \LaTeX to express spacing. Let's check this \href{htt
 
 Let's look at horizontal spacing. In normal text mode, you can use \mbox{\textbackslash hspace\{ \dots \}} with any desired length. 
 
+Some text here \hspace{2cm} some other text here.
+
 In math mode:
 
-\quad	space equal to the current font size (= 18 mu)
+\textbackslash quad	space equal to the current font size (= 18 mu)
 
 \textbackslash,	3/18 of \quad (= 3 mu)
 
@@ -185,7 +190,9 @@ f(x) =& x^2\qquad +3x\qquad +2
 \begin{tabular}{ |l | c | r| }
   \hline			
   1 & 2 & 3 \\
+  \hline
   4 & 5 & 6 \\
+  \hline
   7 & 8 & 9 \\
   \hline  
 \end{tabular}
@@ -227,7 +234,7 @@ Let's add some figures!
 
 \vspace{3em}
 
-\includegraphics[width=0.49\linewidth]{Images/CUBoulderLogo.png}
+\includegraphics[scale=0.5]{Images/CUBoulderLogo.png}
 
 \vspace{3em}
 
@@ -254,7 +261,6 @@ Let's add two figures side by side:
 Now let's add two figures side by side, but in which I can use a subcaption (so I do not need to specify left/right in the caption). For this command I need a bit of work in the preamble.
 
 \begin{figure}
-%\captionsetup{type=figure}
     \centering
     \subfloat[]{\includegraphics[width=0.35\linewidth]{Images//Minion.jpg}\label{fig:Minion}}
     \hfill % it separates the two objects, spanning the entire line
@@ -265,7 +271,7 @@ Now let's add two figures side by side, but in which I can use a subcaption (so 
 \clearpage
 
 %% Bibliography
-\bibliography{References}
+\bibliography{References.bib}
 
 
 
