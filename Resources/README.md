@@ -4,6 +4,6 @@ Some useful links:
 
 * [Overleaf learning site](https://www.overleaf.com/learn)
 
-* [Beamer themese gallery](http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html)
+* [Beamer themes gallery](http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html)
 
 * [Media 9 package to insert multimedia in your slides](https://tex.stackexchange.com/questions/345431/how-to-include-multimedia-files-in-beamer)
